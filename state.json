@@ -1,12 +1,12 @@
 {
   "https://shop.amul.com/en/product/amul-chocolate-whey-protein-34-g-or-pack-of-30-sachets": {
     "available": false,
-    "price": "\u20b92,500",
-    "reason": "Add to Cart has disabled=true"
+    "price": "Price unavailable",
+    "reason": "No visible Add to Cart control"
   },
   "https://shop.amul.com/en/product/amul-chocolate-whey-protein-34-g-or-pack-of-60-sachets": {
     "available": false,
-    "price": "\u20b94,500",
-    "reason": "Add to Cart has disabled=true"
+    "price": "Price unavailable",
+    "reason": "No visible Add to Cart control"
   }
 }
