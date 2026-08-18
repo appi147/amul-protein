@@ -1,0 +1,16 @@
+name = "amul-github-dispatcher"
+main = "src/index.js"
+compatibility_date = "2026-08-18"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+GITHUB_OWNER = "appi147"
+GITHUB_REPOSITORY = "amul-protein"
+GITHUB_WORKFLOW = "amul-stock.yml"
+GITHUB_REF = "main"
+
+[observability]
+enabled = true
+head_sampling_rate = 1

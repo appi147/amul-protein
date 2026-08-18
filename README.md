@@ -13,9 +13,7 @@ Products monitored:
 
 Create a new repository, preferably private, and upload these files.
 
-The workflow is already configured for GitHub Actions every 5 minutes.
-
-GitHub's documented minimum schedule interval is 5 minutes.
+The included Cloudflare Worker triggers the GitHub Actions workflow every five minutes.
 
 ## 2. Create a Telegram bot
 
@@ -82,7 +80,34 @@ It also remembers the last state in `state.json`, so it sends an alert on an
 unavailable → available transition rather than every five minutes while the item
 remains available.
 
-## GitHub Actions timing
+## Cloudflare scheduling (recommended)
 
-GitHub schedules are not guaranteed to start at the exact second/minute requested;
-a 5-minute cron is the minimum supported interval and runs on GitHub-hosted runners.
+GitHub's built-in scheduler can delay runs. The included Cloudflare Worker calls this
+workflow's `workflow_dispatch` API every five minutes instead.
+
+1. In GitHub, create a **fine-grained personal access token** restricted to this
+   repository with **Actions: Read and write** and **Contents: Read** permissions.
+2. Install Wrangler and sign in to Cloudflare:
+
+   ```powershell
+   npm install -g wrangler
+   wrangler login
+   ```
+
+3. From the repository root, store the token as a Worker secret and deploy:
+
+   ```powershell
+   cd cloudflare-dispatcher
+   wrangler secret put GITHUB_TOKEN
+   wrangler deploy
+   ```
+
+   Paste the GitHub token only when Wrangler prompts for it. Never add it to
+   `wrangler.toml`, the workflow file, or a GitHub repository secret.
+
+4. Confirm the worker has the `*/5 * * * *` Cron Trigger in Cloudflare Dashboard
+   → Workers & Pages → `amul-github-dispatcher` → Settings → Triggers.
+
+Deploy the Worker before pushing the workflow change that removes GitHub's own
+`schedule` trigger. The workflow retains `workflow_dispatch` for Cloudflare and
+manual runs from the GitHub Actions page.
