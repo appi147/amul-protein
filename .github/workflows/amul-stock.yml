@@ -10,7 +10,9 @@ permissions:
 
 concurrency:
   group: amul-stock-monitor
-  cancel-in-progress: true
+  # Let a check finish even if the next scheduled tick arrives. This avoids
+  # cancelling runs while Playwright is still loading the product pages.
+  cancel-in-progress: false
 
 jobs:
   check-stock:
