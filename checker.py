@@ -13,8 +13,12 @@ PRODUCTS = [
         "url": "https://shop.amul.com/en/product/amul-chocolate-whey-protein-34-g-or-pack-of-60-sachets",
     },
     {
-        "name": "Amul Chocolate Whey Protein — 30 sachets",
-        "url": "https://shop.amul.com/en/product/amul-chocolate-whey-protein-34-g-or-pack-of-30-sachets",
+        "name": "Amul Plain Lassi",
+        "url": "https://shop.amul.com/en/product/amul-high-protein-plain-lassi-200-ml-or-pack-of-30",
+    },
+    {
+        "name": "Amul Rose Lassi",
+        "url": "https://shop.amul.com/en/product/amul-high-protein-rose-lassi-200-ml-or-pack-of-30",
     },
 ]
 
