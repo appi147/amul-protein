@@ -15,8 +15,8 @@
     "reason": "Add to Cart has disabled=true"
   },
   "https://shop.amul.com/en/product/amul-high-protein-rose-lassi-200-ml-or-pack-of-30": {
-    "available": false,
+    "available": true,
     "price": "\u20b9900",
-    "reason": "Add to Cart has disabled=true"
+    "reason": "Add to Cart is enabled"
   }
 }
