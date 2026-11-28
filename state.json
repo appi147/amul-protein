@@ -5,9 +5,9 @@
     "reason": "Add to Cart is enabled"
   },
   "https://shop.amul.com/en/product/amul-chocolate-whey-protein-34-g-or-pack-of-60-sachets": {
-    "available": true,
-    "price": "\u20b94,500",
-    "reason": "Add to Cart is enabled"
+    "available": false,
+    "price": "Price unavailable",
+    "reason": "No visible Add to Cart control"
   },
   "https://shop.amul.com/en/product/amul-high-protein-plain-lassi-200-ml-or-pack-of-30": {
     "available": true,
